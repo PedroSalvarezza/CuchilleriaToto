@@ -1,0 +1,17 @@
+[
+  {
+    "id": 22,
+    "nombre": "Cuchillo número 22",
+    "imagen": "./recursos/imagenes/Cuchillo N22 con funda.jpg"
+  },
+  {
+    "id": 24,
+    "nombre": "Cuchillo número 24",
+    "imagen": "./recursos/imagenes/Cuchillo N24 sin funda acostado.jpg"
+  },
+  {
+    "id": 25,
+    "nombre": "Cuchillo número 25",
+    "imagen": "./recursos/imagenes/Cuchillo N25 de costado derecha.jpg"
+  }
+]

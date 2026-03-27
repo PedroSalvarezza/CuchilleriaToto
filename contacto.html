@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./recursos/imagenes/LogoFinal.png" type="image/png">
+    <title>Contacto | Cuchillería Toto</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+    <script type="module" src="./recursos/js/contacto.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./recursos/imagenes/LogoFinal.png" alt="Logo" width="40">
+            </a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contacto-section">
+            <h2>Contacto</h2>
+            <hr>
+            <div class="contacto-info">
+                <p>
+                  <a href="mailto:cuchilleriatoto@gmail.com?subject=Consulta&body=Hola%20Tomaas,%20tengo%20una%20consulta." target="nuevo">
+                    <img src="./recursos/imagenes/gmail.png" alt="mail" width="20">
+                    cuchilleriatoto@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <a href="https://wa.me/3512428444" target="nuevo">
+                        <img src="./recursos/imagenes/whatsapp.png" alt="whatsapp" width="20">
+                        351 242-8444
+                  </a>
+                </p>
+            </div>
+            <hr>
+        </section>
+        <section class="contacto-section">
+            <h3>Dejanos tu mensaje</h3>
+            <form id="contacto-form" class="contacto-form">
+                <label for="id-nombre">Nombre:</label>
+                <br>
+                <input type="text" name="nombre" id="id-nombre" required>
+                <br>
+                <label for="id-mail">Mail:</label>
+                <br>
+                <input type="email" name="mail" id="id-mail" required>
+                <br>
+                <label for="id-mensaje">Mensaje:</label>
+                <br>
+                <textarea name="mensaje" id="id-mensaje" rows="4" required></textarea>
+                <br>
+                <button type="reset">Borrar</button>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li>
+                    <a href="https://wa.me/3512428444" target="nuevo">
+                        <img src="./recursos/imagenes/whatsapp.png" alt="whatsapp" width="20">
+                        Telefono: 351 242-8444
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/cuchilleriatoto?igsh=MWNwNGl0OW1ucXQxNw==" target="nuevo">
+                        <img src="./recursos/imagenes/Logo ig.png" alt="Instagram" width="20">
+                        CuchilleriaToto
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    </body>
+</html>

@@ -9,10 +9,8 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
-// Sirve todos los archivos estáticos de la carpeta public
 app.use(express.static(path.join(__dirname, 'frontend')))
 
-// GET /catalogo — devuelve los productos del catálogo desde MockAPI
 app.get('/api/catalogo', async (peticion, respuesta) => {
   try {
     const catalogo = await obtenerCatalogo()
@@ -27,7 +25,6 @@ app.get('/api/catalogo', async (peticion, respuesta) => {
   }
 })
 
-// GET /galeria — devuelve los productos de la galería desde MockAPI
 app.get('/api/galeria', async (peticion, respuesta) => {
   try {
     const galeria = await obtenerGaleria()

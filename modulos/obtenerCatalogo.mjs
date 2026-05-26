@@ -1,7 +1,7 @@
 // URL de tu proyecto en MockAPI — reemplazá con la tuya
 const MOCKAPI_URL = 'https://69e6698fce4e908a155f7dd6.mockapi.io/api/v1/catalogo'
 
-export async function obtenerCatalogo() {
+/*export async function obtenerCatalogo() {
   const respuesta = await fetch(MOCKAPI_URL)
 
   if (!respuesta.ok) {
@@ -10,4 +10,4 @@ export async function obtenerCatalogo() {
 
   const catalogo = await respuesta.json()
   return catalogo
-}
+}*/

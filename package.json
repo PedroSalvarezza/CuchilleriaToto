@@ -4,7 +4,7 @@
   "description": "Backend para el sitio web de Cuchillería Toto",
   "main": "index.mjs",
   "scripts": {
-    "dev": "node --watch index.mjs",
+    "dev": "nodemon index.mjs",
     "start": "node index.mjs"
   },
   "keywords": [],
@@ -12,6 +12,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "pg": "8.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.14"
   }
 }

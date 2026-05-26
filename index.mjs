@@ -1,7 +1,7 @@
 import express from 'express'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { obtenerCatalogo } from './modulos/obtenerCatalogo.mjs'
+import rutasModuloProducto from './modulos/productos/rutas.productos.mjs'
 import { obtenerGaleria } from './modulos/obtenerGaleria.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -9,7 +9,9 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
-app.use(express.static(path.join(__dirname, 'frontend')))
+//app.use(express.static(path.join(__dirname, 'frontend')))
+
+app.use(rutasModuloProducto)
 
 app.get('/api/catalogo', async (peticion, respuesta) => {
   try {

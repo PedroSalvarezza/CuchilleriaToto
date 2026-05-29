@@ -8,36 +8,22 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
-
+app.use(express.json())
 //app.use(express.static(path.join(__dirname, 'frontend')))
 
 app.use(rutasModuloProducto)
 
-app.get('/api/catalogo', async (peticion, respuesta) => {
-  try {
-    const catalogo = await obtenerCatalogo()
-
-    respuesta.statusCode = 200
-    return respuesta.json(catalogo)
-
-  } catch (e) {
-    console.log(e.message)
-    respuesta.statusCode = 500
-    return respuesta.json({ error: e.message })
-  }
-})
-
-app.get('/api/galeria', async (peticion, respuesta) => {
+app.get('/api/galeria', async (req, res) => {
   try {
     const galeria = await obtenerGaleria()
 
-    respuesta.statusCode = 200
-    return respuesta.json(galeria)
+    res.statusCode = 200
+    return res.json(galeria)
 
   } catch (e) {
     console.log(e.message)
-    respuesta.statusCode = 500
-    return respuesta.json({ error: e.message })
+    res.statusCode = 500
+    return res.json({ error: e.message })
   }
 })
 

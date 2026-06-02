@@ -8,7 +8,7 @@ function renderizadoFront(lista, contenedor) {
         articulo.classList.add("producto-item");
 
         articulo.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-img">
+            <img src="${producto.imagen ? '/archivos/' + producto.imagen : ''}" alt="${producto.nombre}" class="producto-img">
             <p class="producto-nombre">${producto.nombre}</p>
         `;
 
@@ -42,7 +42,7 @@ function renderizadoCatalogo(lista, contenedor) {
 
         slide.innerHTML = `
             <div class="carrusel-imagen-wrap">
-                <img src="${producto.imagen}" alt="${producto.nombre}" class="carrusel-img">
+                <img src="${producto.imagen ? '/archivos/' + producto.imagen : ''}" alt="${producto.nombre}" class="carrusel-img">
             </div>
             <div class="carrusel-info">
                 <h3 class="carrusel-nombre">${producto.nombre}</h3>

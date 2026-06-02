@@ -14,5 +14,4 @@ rutasProductos.put('/api/v1/productos/:id', controlador.actualizarProducto)
 
 
 
-
 export default rutasProductos

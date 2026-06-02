@@ -1,32 +1,26 @@
 import express from 'express'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import './iniciar.env.mjs'
 import rutasModuloProducto from './modulos/productos/rutas.productos.mjs'
-import { obtenerGaleria } from './modulos/obtenerGaleria.mjs'
+import rutasModuloGaleria from './modulos/galeria/rutas.galeria.mjs'
+import rutasWeb from './modulos/web/rutas.web.mjs'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const PUERTO = process.env.PUERTO || 3000
 
 const app = express()
 app.use(express.json())
-//app.use(express.static(path.join(__dirname, 'frontend')))
 
+// APIs del CRUD
 app.use(rutasModuloProducto)
+app.use(rutasModuloGaleria)
+// API de solo lectura para la web pública
+app.use(rutasWeb)
 
-app.get('/api/galeria', async (req, res) => {
-  try {
-    const galeria = await obtenerGaleria()
+// Front web público
+app.use(express.static(path.resolve('./frontend')))
+// Carpeta donde Multer guarda las imágenes subidas
+app.use('/archivos', express.static(path.resolve('./archivos')))
 
-    res.statusCode = 200
-    return res.json(galeria)
-
-  } catch (e) {
-    console.log(e.message)
-    res.statusCode = 500
-    return res.json({ error: e.message })
-  }
-})
-
-app.listen(3000, () => {
-  console.log('servidor escuchando en http://localhost:3000')
+app.listen(PUERTO, () => {
+    console.log(`Servidor en http://localhost:${PUERTO}`)
 })

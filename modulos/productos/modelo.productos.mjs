@@ -1,18 +1,18 @@
 import pool from "../../utilidades/conexion.bd.mjs";
 
-
+// LECTURA: todos
 export async function obtenerCatalogo() {
     const resultado = await pool.query('SELECT * FROM productos ORDER BY id')
-    return resultado.rows
+    return resultado
 }
 
-
+// LECTURA: uno por id
 export async function obtenerProductoPorId(id) {
     const resultado = await pool.query('SELECT * FROM productos WHERE id = $1', [id])
-    return resultado.rows[0]
+    return resultado
 }
 
-
+// ALTA
 export async function crearProducto(datos) {
     const { nombre, medidas, material, cabo, precio, imagen } = datos
     const resultado = await pool.query(
@@ -21,10 +21,10 @@ export async function crearProducto(datos) {
          RETURNING *`,
         [nombre, medidas, material, cabo, precio, imagen]
     )
-    return resultado.rows[0]
+    return resultado
 }
 
-
+// MODIFICACIÓN
 export async function actualizarProducto(id, datos) {
     const { nombre, medidas, material, cabo, precio, imagen } = datos
     const resultado = await pool.query(
@@ -34,11 +34,11 @@ export async function actualizarProducto(id, datos) {
          RETURNING *`,
         [nombre, medidas, material, cabo, precio, imagen, id]
     )
-    return resultado.rows[0]
+    return resultado
 }
 
-
+// BAJA
 export async function eliminarUno(id) {
     const resultado = await pool.query('DELETE FROM productos WHERE id = $1 RETURNING *', [id])
-    return resultado.rows[0]
+    return resultado
 }

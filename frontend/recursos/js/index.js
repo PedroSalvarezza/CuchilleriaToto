@@ -14,12 +14,12 @@ const $catalogoList = document.querySelector('.catalogo-lista')
 
     if ($productosList) {
       $productosList.innerHTML = ''
-      const productosGaleria = await obtenerDatos('/api/galeria')
-      renderizadoFront(productosGaleria, $productosList)
+      const galeria = await obtenerDatos('/api/galeria')
+      renderizadoFront(galeria, $productosList)
     }
   } catch (e) {
     console.log(e.message)
     if ($catalogoList) $catalogoList.innerHTML = '<p>Error al cargar el catálogo.</p>'
-    if ($productosList) $productosList.innerHTML = '<p>Error al cargar los productos.</p>'
+    if ($productosList) $productosList.innerHTML = '<p>Error al cargar la galería.</p>'
   }
 })()

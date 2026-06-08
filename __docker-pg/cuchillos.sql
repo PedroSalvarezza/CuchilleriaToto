@@ -13,12 +13,12 @@ CREATE TABLE productos (
 );
 
 
-INSERT INTO productos (nombre, medidas, material, cabo, precio, imagen) VALUES
-('Cuchillo número 39', '16cm de hoja, 32cm en total', 'Acero Inoxidable', 'Guayubira', 160000.00, 'Cuchillo N39.jpg'),
-('Cuchillo número 41', '15cm de hoja, 28cm en total', 'Acero Inoxidable', 'Caranda', 130000.00, 'Cuchillo N41.jpg'),
-('Cuchillo número 42', '12cm de hoja, 26cm en total', 'Acero Inoxidable', 'Paraiso', 120000.00, 'Cuchillo N42.jpg'),
-('Cuchillo número 43', '14cm de hoja, 28cm en total', 'Acero Inoxidable', 'Guayacan', 130000.00, 'Cuchillo N43.jpg'),
-('Cuchillo número 44', '18cm de hoja, 35cm en total', 'Acero Inoxidable', 'Quebracho', 200000.00, 'Cuchillo N44.jpg');
+INSERT INTO productos (nombre, medidas, material, cabo, precio, imagen, en_galeria) VALUES
+('Cuchillo número 39', '16cm de hoja, 32cm en total', 'Acero Inoxidable', 'Guayubira', 160000.00, 'Cuchillo N39.jpeg', true),
+('Cuchillo número 41', '15cm de hoja, 28cm en total', 'Acero Inoxidable', 'Caranda', 130000.00, 'Cuchillo N41.jpeg', true),
+('Cuchillo número 42', '12cm de hoja, 26cm en total', 'Acero Inoxidable', 'Paraiso', 120000.00, 'Cuchillo N42.jpeg', false),
+('Cuchillo número 43', '14cm de hoja, 28cm en total', 'Acero Inoxidable', 'Guayacan', 130000.00, 'Cuchillo N43.jpeg', false),
+('Cuchillo número 44', '18cm de hoja, 35cm en total', 'Acero Inoxidable', 'Quebracho', 200000.00, 'Cuchillo N44.jpeg', true);
 
 
 

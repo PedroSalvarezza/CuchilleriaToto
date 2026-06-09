@@ -42,9 +42,3 @@ export async function eliminarUno(id) {
     const resultado = await pool.query('DELETE FROM productos WHERE id = $1 RETURNING *', [id])
     return resultado
 }
-
-// Nueva función — solo los que tienen en_galeria = true
-export async function obtenerGaleria() {
-    const resultado = await pool.query('SELECT * FROM productos WHERE en_galeria = true ORDER BY id')
-    return resultado
-}

@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as modeloProductos from '../productos/modelo.productos.mjs'
+import * as modeloGaleria from '../galeria/modelo.galeria.mjs'
 
 const rutasWeb = new Router()
 
@@ -14,10 +15,10 @@ rutasWeb.get('/api/catalogo', async (req, res) => {
     }
 })
 
-// Galería: solo los marcados con en_galeria = true
+// Galería: desde la tabla galeria
 rutasWeb.get('/api/galeria', async (req, res) => {
     try {
-        const respuesta = await modeloProductos.obtenerGaleria()
+        const respuesta = await modeloGaleria.obtenerTodos()
         res.json(respuesta.rows)
     } catch (e) {
         res.statusCode = 500
